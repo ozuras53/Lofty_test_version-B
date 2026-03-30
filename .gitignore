@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+.idea/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+.env
+rss.db
+
