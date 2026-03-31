@@ -22,8 +22,6 @@ flowchart LR
     Parser -->|PostIn| Storage["Storage DB"]
     Storage -->|New PostOut| Notifier["Notifier Telegram"]
     Scheduler["Scheduler"] --> Parser
-    Scheduler --> Storage
-    Scheduler --> Notifier
     Storage <-->|SQLite| DB[(posts)]
     Notifier -->|HTTP| TG["Telegram Bot API"]
 ```
