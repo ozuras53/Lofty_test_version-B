@@ -18,14 +18,14 @@
 
 ```mermaid
 flowchart LR
-    RSS[RSS Feed] -->|HTTP| Parser[RSSParser]
-    Parser -->|PostIn[]| Storage[Storage (DB)]
-    Storage -->|новые PostOut[]| Notifier[Notifier (Telegram)]
-    Scheduler[Scheduler] --> Parser
+    RSS["RSS Feed"] -->|HTTP| Parser["RSSParser"]
+    Parser -->|PostIn| Storage["Storage DB"]
+    Storage -->|New PostOut| Notifier["Notifier Telegram"]
+    Scheduler["Scheduler"] --> Parser
     Scheduler --> Storage
     Scheduler --> Notifier
     Storage <-->|SQLite| DB[(posts)]
-    Notifier -->|HTTP| TG[Telegram Bot API]
+    Notifier -->|HTTP| TG["Telegram Bot API"]
 ```
 
 ### 2. Модели данных
